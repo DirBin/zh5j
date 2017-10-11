@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.zh5j</groupId>
+		<artifactId>zh5j</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>zh5j-common</artifactId>
+	<packaging>jar</packaging>
+	<name>zh5j-common</name>
+	<url>http://maven.apache.org</url>
+  	<dependencies>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>alipay-sdk-java</artifactId>
+			<version>java20170615110434</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/alipay-sdk-java20170615110434.jar</systemPath>
+		</dependency>
+	</dependencies>
+</project>

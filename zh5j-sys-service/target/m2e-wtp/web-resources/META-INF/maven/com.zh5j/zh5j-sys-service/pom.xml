@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>com.zh5j</groupId>
+		<artifactId>zh5j</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	
+	<artifactId>zh5j-sys-service</artifactId>
+	<packaging>war</packaging>
+	<name>zh5j-sys-service</name>
+	<url>http://maven.apache.org</url>
+  
+    <properties>
+		<server.port>8085</server.port>
+	</properties>
+
+	<!-- 生成model -->
+	<!-- mybatis-generator:generate -->
+
+	<dependencies>
+		<dependency>
+			<groupId>com.zh5j</groupId>
+			<artifactId>zh5j-common</artifactId>
+			<version>${project.version}</version>
+			
+		</dependency>
+		<dependency>
+			<groupId>com.zh5j</groupId>
+			<artifactId>zh5j-sys-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
+</project>

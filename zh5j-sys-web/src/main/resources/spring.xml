@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans          
+    http://www.springframework.org/schema/beans/spring-beans.xsd          
+    http://code.alibabatech.com/schema/dubbo          
+    http://code.alibabatech.com/schema/dubbo/dubbo.xsd  
+    http://www.springframework.org/schema/context  
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- 引入属性配置文件 -->
+	<bean class="com.zh5j.common.util.PropertiesUtil">
+		<property name="locations">
+			<list>
+				<value>${system.config.path}</value>
+			</list>
+		</property>
+		<property name="properties">
+			<props>
+				<!-- rpc个性化配置(服务名,端口) -->
+				<prop key="rpc.registry.name">${project.artifactId}</prop>
+				<prop key="rpc.protocol.port">1${server.port}</prop>
+			</props>
+		</property>
+	</bean>  
+  
+    <!--引入配置属性文件 -->  
+    <!-- <context:property-placeholder location="classpath:config.properties" /> -->  
+    <!-- 扫描注解 -->
+	<context:component-scan base-package="com.zh5j">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+		<context:exclude-filter type="annotation" expression="org.springframework.cache.annotation.EnableCaching" />
+	</context:component-scan>
+  
+    <import resource="spring/dubbo.xml" />
+    <import resource="spring/redis.xml" />
+	<import resource="spring/session.xml" />
+    <import resource="spring/shiro.xml" />  
+</beans> 
